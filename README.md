@@ -75,11 +75,37 @@ npm run build
 
 This will create an optimized production build in the `out` folder (since we're using static export).
 
-### Deployment Options
+### GitHub Pages Deployment
+
+This project is configured for automated deployment to GitHub Pages using GitHub Actions:
+
+1. Push your changes to the `main` branch:
+   ```bash
+   git add .
+   git commit -m "Your commit message"
+   git push origin main
+   ```
+
+2. The GitHub Actions workflow will automatically:
+   - Build the Next.js application
+   - Export it as static files
+   - Deploy to the `gh-pages` branch
+   - Publish to GitHub Pages
+
+3. Your site will be available at `https://yourusername.github.io/static-homepage`
+
+4. To check the deployment status, go to the "Actions" tab in your GitHub repository.
+
+### Troubleshooting GitHub Pages Deployment
+
+- If images are not loading, ensure they use the correct base path
+- For 404 errors, check that the `basePath` in `next.config.ts` matches your repository name
+- For custom domains, add a CNAME file to the `public` directory
+
+### Other Deployment Options
 
 - **Vercel**: The easiest way to deploy your Next.js app. Simply connect your GitHub repository to Vercel.
 - **Netlify**: Another great option for static site hosting.
-- **GitHub Pages**: You can deploy the static export to GitHub Pages.
 - **Any static hosting**: The site is exported as static HTML/CSS/JS files and can be deployed to any static hosting provider.
 
 ## License

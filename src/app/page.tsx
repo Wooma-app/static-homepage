@@ -1,10 +1,13 @@
 export default function Home() {
+  // Get the base path for assets
+  const basePath = process.env.NODE_ENV === 'production' ? '/static-homepage' : '';
+  
   return (
     <div className="min-h-screen flex flex-col bg-white font-sans">
       {/* Logo in top left */}
       <div className="absolute top-6 left-6 md:top-8 md:left-8">
         <img 
-          src="/wooma-logo.png" 
+          src={`${basePath}/wooma-logo.png`}
           alt="Wooma Logo" 
           className="h-5 md:h-6"
         />
@@ -53,7 +56,7 @@ export default function Home() {
           <div className="mb-4">
             {/* Logo in footer */}
             <img 
-              src="/wooma-logo.png" 
+              src={`${basePath}/wooma-logo.png`}
               alt="Wooma Logo" 
               className="h-4 mx-auto"
             />
