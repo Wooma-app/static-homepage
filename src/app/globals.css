@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-sofia-sans);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --wooma-green: #00C802;
+  --wooma-green-light: #4ddb4f;
+  --wooma-green-dark: #00a002;
+  --wooma-gray: #f5f5f5;
+  --wooma-gray-dark: #333333;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Override dark mode to use light mode values */
+    --background: #ffffff;
+    --foreground: #171717;
+    --wooma-gray: #f5f5f5;
+  }
+}
+
+html {
+  font-family: var(--font-sofia-sans), system-ui, sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
